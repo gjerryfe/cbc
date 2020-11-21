@@ -29,6 +29,8 @@ public class Compiler {
     // #@@}
 
     public void commandMain(String[] args) {
+        System.out.println("DEBUG: command args" + args.toString());
+        System.out.println("DEBUG: test args" + args.toString());
         Options opts = parseOptions(args);
         if (opts.mode() == CompilerMode.CheckSyntax) {
             System.exit(checkSyntax(opts) ? 0 : 1);

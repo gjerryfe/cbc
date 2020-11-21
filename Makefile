@@ -6,6 +6,10 @@ default: all
 
 all: lib/cbc.jar lib/libcbc.a
 
+reinstall: clean lib/cbc.jar lib/libcbc.a 
+	sudo bash install.sh
+	cbc -Wa,"--32" -Wl,"-melf_i386" test/hello.cb
+
 lib/cbc.jar:
 	$(ANT) compile
 
